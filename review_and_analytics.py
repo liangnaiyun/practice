@@ -29,5 +29,12 @@ for d in data:
 	if len(d) < 100:
 		filter_review_list.append(d)
 
-print(filter_review_list)
 print('一共有', len(filter_review_list), '筆留言長度小於100')
+
+
+filter_review_list2 = []
+for d in data:
+	if d == 'good':
+		filter_review_list2.append(d)
+
+print('一共有', len(filter_review_list2), '筆留言提到good')
