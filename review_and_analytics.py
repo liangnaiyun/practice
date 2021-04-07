@@ -44,3 +44,6 @@ print('一共有', len(filter_review_list2), '筆留言提到good')
 # 篩選留言包含good
 good_list = [d for d in data if 'good' in d]
 print('一共有', len(good_list), '筆留言提到good')
+
+bad = ['bad' in d for d in data]
+print(bad)
