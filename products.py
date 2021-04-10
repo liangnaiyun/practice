@@ -1,3 +1,4 @@
+import csv
 products = []
 
 while  True:
@@ -13,6 +14,8 @@ for p in products:
 	print(p[0])
 	print(p[1])
 
-with open('products.txt', 'w') as f:
+#使用newline可以讓寫入資料的每一個不要多一行空白行
+with open('products.csv', 'w', newline = '') as f:
+	writer = csv.writer(f)
 	for p in products:
-		f.write(p[0] + ',' + p[1] + '\n')
+		writer.writerow([p[0], p[1]])
