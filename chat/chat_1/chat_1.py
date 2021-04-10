@@ -23,14 +23,15 @@ def read_file(filename):
 
 def convert(str_arr):
 	convert_str_arr = []
-	current_user_name = ''
+	current_user_name = None
 	for line in str_arr:
 		if line == 'Allen':
 			current_user_name = line
 		elif line == 'Tom':
 			current_user_name = line
 		else:
-			convert_str_arr.append(current_user_name + '：' + line + '\n')
+			if current_user_name:
+				convert_str_arr.append(current_user_name + '：' + line + '\n')
 	return convert_str_arr
 
 
