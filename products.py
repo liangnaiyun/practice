@@ -8,5 +8,11 @@ while  True:
 	products.append([name,price])
 
 print(products)
-print(products[0][0])
-print(products[0][1])
+
+for p in products:
+	print(p[0])
+	print(p[1])
+
+with open('products.txt', 'w') as f:
+	for p in products:
+		f.write(p[0] + ',' + p[1] + '\n')
