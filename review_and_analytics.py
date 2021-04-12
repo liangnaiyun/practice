@@ -47,3 +47,28 @@ print('一共有', len(good_list), '筆留言提到good')
 
 bad = ['bad' in d for d in data]
 print(bad)
+
+
+#利用字典找到所有詞出現的次數
+wc = {}
+for line in data:
+	#split()預設會以空白字元切割(包含連續空白)
+	sp = line.split()
+	for s in sp:
+		if s in wc:
+			wc[s] += 1
+		else:
+			wc[s] = 1
+
+for w in wc:
+	print(w, "：", wc[w])	
+
+while True:
+	word = input('請問你想查甚麼字：')
+	if word == 'q':
+		print('感謝使用本查詢功能')
+		break
+	if word in wc:
+		print(word, '出現過', wc[word], '次')
+	else:
+		print('找不到', word)
